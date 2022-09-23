@@ -7,23 +7,7 @@ import {
 } from "@expo/vector-icons";
 import LikeImage from "../../assets/images/like.png";
 
-const post = {
-  id: "p1",
-  createdAt: "19 m", // maybe start working with actual time and time library?
-  User: {
-    id: "u1",
-    image:
-      "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/zuck.jpeg",
-    name: "Mahdi ph",
-  },
-  description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-  image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg",
-  numberOfLikes: 11,
-  numberOfShares: 2,
-};
-
-const FeedPost = () => {
+const FeedPost = ({ post }) => {
   return (
     <View style={styles.post}>
       {/* Header */}
@@ -42,7 +26,9 @@ const FeedPost = () => {
       </View>
 
       {/* Body */}
-      <Text style={styles.description}>{post.description}</Text>
+      {post.description && (
+        <Text style={styles.description}>{post.description}</Text>
+      )}
       {post.image && (
         <Image
           source={{ uri: post.image }}
