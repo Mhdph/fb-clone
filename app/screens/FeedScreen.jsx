@@ -3,6 +3,10 @@ import posts from "../../assets/data/posts.json";
 import FeedPost from "../components/FeedPost";
 import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+
+const img =
+  "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/user.png";
+
 const FeedScreen = () => {
   const navigation = useNavigation();
 
